@@ -7,7 +7,7 @@
  * # MainCtrl
  * Controller of the tutorialAngularApp
  */
-angular.module('tutorialAngularApp')
+var app = angular.module('tutorialAngularApp')
   .controller('MainCtrl', function () {
     this.awesomeThings = [
       'HTML5 Boilerplate',

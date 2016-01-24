@@ -1,9 +1,42 @@
- <div class="container" ng-controller='StoreCtrl as store'>
- <div class="product row" ng-show='!store.product.soldOut' ng-repeat='product in store.products'>
+ <div class="list-group" ng-controller='StoreCtrl as store'>
+ <div class="list-group-item" ng-show='!store.product.soldOut' ng-repeat='product in store.products'>
     <h3>
         {{product.name}}
     <em class="pull-right">{{product.price | currency}}</em>
     </h3>
     <button ng-show='product.canPurchase'>Add to Cart</button>
+      <!-- Image Gallery  -->
+        <div class='gallery'   ng-show="product.images.length">
+        	
+        <!-- Fail 1 Message -->
+        <div ng-show="product.images">
+            <ul class="img-thumbnails clearfix">
+            <li class="small-image pull-left thumbnail" ng-repeat="image in product.images"> <img ng-src="{{image}}" /> </li>
+          </ul>
+        </div>
+
+      </div>
+      <section class="tab" ng-controller='TabController as tabCtrl'>
+        <ul class="nav nav-pills">
+          <li ng-class="{ active: tabCtrl.isSet(1) }">
+            <a href ng-click='tabCtrl.setTab(1)'>Description</a></li>
+          <li ng-class="{ active: tabCtrl.isSet(2) }">
+            <a href ng-click='tabCtrl.setTab(2)'>Specs</a></li>
+          <li ng-class="{ active: tabCtrl.isSet(3) }">
+            <a href ng-click='tabCtrl.setTab(3)'>Reviews</a></li>
+        </ul>
+        <div ng-show='tabCtrl.isSet(1)'>
+          <h4>Description</h4>
+          <blockquote>{{product.description}}</blockquote>
+        </div>
+        <div ng-show='tabCtrl.isSet(2)'>
+          <h4>Specs</h4>
+          <blockquote>Shine: {{product.shine}}</blockquote>
+        </div>
+        <div ng-show='tabCtrl.isSet(3)'>
+          <h4>Reviews</h4>
+          <blockquote></blockquote>
+        </div>
+      </section>
 </div>
 </div>

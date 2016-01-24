@@ -1,5 +1,4 @@
-<!doctype html>
-<html>
+<html ng-app="tutorialAngularApp">
   <head>
     <meta charset="utf-8">
     <title></title>
@@ -15,15 +14,15 @@
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
   </head>
-  <body ng-app="tutorialAngularApp">
+  <body>
     <!--[if lte IE 8]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
     <!-- Add your site or application content here -->
-   
-    <h1>{{"Hello, Angular!"}}</h1>
 
+        <div ui-view class="foo" focus-form-input></div>
+  
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
      <script>
        !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
@@ -46,11 +45,15 @@
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
     <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
+    <script src="scripts/config/router_config.js"></script>
+    <script src="scripts/controllers/storeCtrl.js"></script>
+
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
-        <script src="scripts/app.js"></script>
+    <script src="scripts/app.js"></script>
         <!-- endbuild -->
 </body>
 </html>

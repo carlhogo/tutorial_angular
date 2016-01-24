@@ -13,7 +13,9 @@ angular
     'ngAnimate',
     'ngCookies',
     'ngResource',
-    'ngRoute',
+    'ui.router',
+    'routerConfig',
+    'exampleController',
     'ngSanitize',
     'ngTouch'
   ]);

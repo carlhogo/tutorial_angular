@@ -2,7 +2,7 @@
  <div class="product row" ng-show='!store.product.soldOut' ng-repeat='product in store.products'>
     <h3>
         {{product.name}}
-    <em class="pull-right">{{product.price}}</em>
+    <em class="pull-right">{{product.price | currency}}</em>
     </h3>
     <button ng-show='product.canPurchase'>Add to Cart</button>
 </div>

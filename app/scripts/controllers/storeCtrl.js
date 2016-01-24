@@ -8,9 +8,15 @@
  * Controller of the tutorialAngularApp
  */
 
-var gem = { name: 'Azurite', price: 2.95 };
+
 
  angular.module('exampleController', [])
   .controller('StoreCtrl', function () {
-  	this.product = gem;
+  	this.products = gems;
   });
+
+var gems = [
+	{ name: 'Azurite', price: 2.95, soldOut: false, canPurchase: true},
+    { name: 'Bloodstone', price: 5.95, soldOut: false, canPurchase: true},
+    { name: 'Zircon', price: 3.95, soldOut: false, canPurchase: true }
+];

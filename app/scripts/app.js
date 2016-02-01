@@ -16,6 +16,7 @@ angular
     'ui.router',
     'routerConfig',
     'exampleController',
+    'exampleDirective',
     'ngSanitize',
     'ngTouch'
   ]);

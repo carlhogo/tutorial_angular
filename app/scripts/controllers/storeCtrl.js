@@ -28,6 +28,21 @@ var app = angular.module('exampleController', [])
  		};
  	});
 
+  app.controller('GalleryController', function(){
+    this.current = 0;
+    this.setCurrent = function(newGallery){
+      this.current = newGallery || 0;
+    };
+  });
+
+  app.controller('ReviewController', function(){
+     this.review = {};
+     this.addReview = function(product){
+       product.reviews.push(this.review);
+       this.review = {};
+     };
+  });
+
 var gems = [
       {
         name: 'Azurite',
@@ -40,7 +55,7 @@ var gems = [
         soldOut: false,
         faces: 14,
         images: [
-          "../images/gem-02.gif"
+          "../images/angularjs.png"
         ],
         reviews: [{
           stars: 5,
@@ -65,7 +80,7 @@ var gems = [
         soldOut: false,
         faces: 12,
         images: [
-          "../images/gem-02.gif"
+          "../images/angularjs.png"
         ],
         reviews: [{
           stars: 3,
@@ -90,7 +105,7 @@ var gems = [
         soldOut: false,
         faces: 6,
         images: [
-          "../images/gem-02.gif"
+          "../images/angularjs.png"
         ],
         reviews: [{
           stars: 1,

@@ -16,25 +16,6 @@ var app = angular.module('exampleController', [])
   	vm.products = gems;
   });
 
-
-  app.controller('TabController',function(){
- 		var vm = this;
- 		vm.tab = 1;
- 		vm.setTab = function(selectTab){
- 			vm.tab = selectTab; 
- 		};
- 		vm.isSet = function(tabName){
- 			return vm.tab === tabName;
- 		};
- 	});
-
-  app.controller('GalleryController', function(){
-    this.current = 0;
-    this.setCurrent = function(newGallery){
-      this.current = newGallery || 0;
-    };
-  });
-
   app.controller('ReviewController', function(){
      this.review = {};
      this.addReview = function(product){
